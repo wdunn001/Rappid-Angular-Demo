@@ -1,0 +1,362 @@
+:host {
+  -webkit-user-select: none;
+  -moz-user-select: -moz-none;
+  user-select: none;
+  font-family: sans-serif, Arial;
+  overflow: hidden;
+}
+
+@font-face {
+  font-family: 'Roboto Condensed';
+  src: url('../assets/fonts/Roboto_Condensed/RobotoCondensed-Light.ttf');
+  font-weight: 300;
+}
+
+@font-face {
+  font-family: 'Roboto Condensed';
+  src: url('../assets/fonts/Roboto_Condensed/RobotoCondensed-Regular.ttf');
+  font-weight: Normal;
+}
+
+@font-face {
+  font-family: 'Roboto Condensed';
+  src: url('../assets/fonts/Roboto_Condensed/RobotoCondensed-Bold.ttf');
+  font-weight: Bold;
+}
+
+@font-face {
+  font-family: 'Averia Libre';
+  src: url('../assets/fonts/Averia_Libre/AveriaLibre-Light.ttf');
+  font-weight: 300;
+}
+
+@font-face {
+  font-family: 'Averia Libre';
+  src: url('../assets/fonts/Averia_Libre/AveriaLibre-Regular.ttf');
+  font-weight: Normal;
+}
+
+@font-face {
+  font-family: 'Averia Libre';
+  src: url('../assets/fonts/Averia_Libre/AveriaLibre-Bold.ttf');
+  font-weight: Bold;
+}
+
+@font-face {
+  font-family: 'Alegreya Sans';
+  src: url('../assets/fonts/Alegreya_Sans/AlegreyaSans-Light.ttf');
+  font-weight: 300;
+}
+
+@font-face {
+  font-family: 'Alegreya Sans';
+  src: url('../assets/fonts/Alegreya_Sans/AlegreyaSans-Regular.ttf');
+  font-weight: Normal;
+}
+
+@font-face {
+  font-family: 'Alegreya Sans';
+  src: url('../assets/fonts/Alegreya_Sans/AlegreyaSans-Bold.ttf');
+  font-weight: Bold;
+}
+
+
+.joint-app {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+
+
+.app-header {
+  position: relative;
+  width: 100%;
+}
+
+.app-body {
+  position: relative;
+  height: -moz-calc(100% - 60px);
+  height: -webkit-calc(100% - 60px);
+  height: calc(100% - 60px);
+}
+
+.app-title {
+  display: inline-block;
+  width: 240px;
+  height: 100%;
+  padding: 0;
+}
+
+.app-title > h1 {
+  color: #fff;
+  font-size: 18px;
+  line-height: 60px;
+  text-align: left;
+  text-transform: uppercase;
+  margin: 0;
+  padding: 0 0 0 30px;
+}
+
+/*  Paper  */
+.paper-container {
+  position: absolute;
+  top: 0;
+  height: 100%;
+  overflow: hidden;
+  box-sizing: border-box;
+  left: 240px;
+  right: 240px;
+}
+
+/*  Inspector  */
+.inspector-container {
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 120px; /* navigator height */
+  width: 240px;
+  box-sizing: border-box;
+}
+
+.field[data-field$="/fill"],
+.field[data-field$="/stroke"] {
+  display: inline-block;
+  vertical-align: top;
+  width: 50%;
+}
+
+.joint-select-box.joint-color-palette .select-box-option:nth-child(2):not(.hover) {
+  border: inset;
+  border-width: 1px;
+}
+
+.joint-inspector-select-box-options {
+  width: 190px;
+}
+
+/*  Navigator  */
+.navigator-container {
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  width: 240px;
+  height: 120px;
+}
+
+/*  Stencil  */
+.stencil-container {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 240px;
+  height: 100%;
+}
+
+.joint-stencil .joint-element[data-type="basic.Image"] text,
+.joint-stencil .joint-element[data-type="devs.Atomic"] .inPorts text,
+.joint-stencil .joint-element[data-type="devs.Atomic"] .outPorts text,
+.joint-stencil .joint-element[data-type="pn.Transition"] text,
+.joint-stencil .joint-element .joint-port text {
+  display: none;
+}
+
+.joint-stencil .joint-element.joint-type-uml rect,
+.joint-stencil .joint-element.joint-type-uml path {
+  stroke: #4a4d6e;
+}
+
+/*  Toolbar  */
+.toolbar-container {
+  display: inline-block;
+  position: absolute;
+  height: 100%;
+  left: 240px;
+  right: 0;
+  box-sizing: border-box;
+}
+
+.toolbar-container .joint-toolbar {
+  width: 100%;
+  height: 100%;
+}
+
+.toolbar-container label {
+  white-space: nowrap;
+}
+
+.toolbar-container button:not(:empty) {
+  padding: 0 4px;
+}
+
+.toolbar-container button.joint-widget[data-type="zoomIn"],
+.toolbar-container button.joint-widget[data-type="zoomOut"] {
+  display: none;
+}
+
+.joint-dialog.joint-lightbox .fg {
+  background-color: #F6F6F6;
+}
+
+/*! Rappid v2.2.0 - HTML5 Diagramming Framework - TRIAL VERSION
+
+Copyright (c) 2015 client IO
+
+ 2018-05-03
+
+
+This Source Code Form is subject to the terms of the Rappid Trial License
+, v. 2.0. If a copy of the Rappid License was not distributed with this
+file, You can obtain one at http://jointjs.com/license/rappid_v2.txt
+ or from the Rappid archive as was distributed by client IO. See the LICENSE file.*/
+
+
+/* Material */
+.joint-app.joint-theme-material .inspector-container {
+    background: #ecf0f8;
+}
+
+.joint-app.joint-theme-material .app-title {
+    box-shadow: inset -1px -1px 1px #434c63;
+    background-color: #545D74;
+    background-image: -ms-linear-gradient(top, #6B748F 0%, #545D74 100%);
+    background-image: -moz-linear-gradient(top, #6B748F 0%, #545D74 100%);
+    background-image: -o-linear-gradient(top, #6B748F 0%, #545D74 100%);
+    background-image: -webkit-gradient(linear, left top, left bottom, color-stop(0, #6B748F), color-stop(100, #545D74));
+    background-image: -webkit-linear-gradient(top, #6B748F 0%, #545D74 100%);
+    background-image: linear-gradient(to bottom, #6B748F 0%, #545D74 100%);
+}
+
+.joint-stencil.joint-theme-material .joint-element.joint-type-uml rect,
+.joint-stencil.joint-theme-material .joint-element.joint-type-uml path {
+    stroke: #ecf0f8;
+}
+
+.joint-inspector.joint-theme-material .select-button-group-button {
+    background: #d0d8e8;
+}
+
+.joint-toolbar.joint-theme-material .joint-widget[data-type="separator"],
+.joint-toolbar.joint-theme-material button {
+    height: 60px;
+}
+
+.joint-toolbar.joint-theme-material .joint-toolbar-group + .joint-toolbar-group button.joint-widget.joint-theme-material[data-type="zoomIn"] {
+    border-width: 0 0 0 2px;
+}
+
+.joint-widget.joint-theme-material[data-name="clear"]:after {
+    background-position: -46px -100px;
+}
+
+.joint-widget.joint-theme-material[data-name="layout"]:after {
+    background-position: -5px -99px;
+}
+
+.joint-widget.joint-theme-material[data-name="print"]:after {
+    background-position: -88px -100px;
+}
+
+.joint-widget.joint-theme-material[data-name="clear"]:after,
+.joint-widget.joint-theme-material[data-name="layout"]:after,
+.joint-widget.joint-theme-material[data-name="print"]:after {
+    display: block;
+    width: 33px;
+    height: 33px;
+    content: ' ';
+    background-color: transparent;
+    background-repeat: no-repeat;
+    background-image: url(./../assets/toolbar-icons-material.png);
+}
+
+@media screen and (max-width: 1460px) and (min-width: 1300px) {
+    .joint-toolbar.joint-theme-material div[data-name="zoom-slider"] input,
+    .joint-toolbar.joint-theme-material label[data-name="zoom-slider-label"] {
+        display: none;
+    }
+
+    .joint-app.joint-theme-material .toolbar-container button[data-type="zoomIn"],
+    .joint-app.joint-theme-material .toolbar-container button[data-type="zoomOut"] {
+        display: block;
+    }
+}
+
+@media screen and (max-width: 1300px) {
+    .joint-app.joint-theme-material .toolbar-container {
+        overflow-y: auto;
+    }
+
+    .joint-toolbar.joint-theme-material {
+        flex-wrap: wrap;
+    }
+
+    .joint-app.joint-theme-material .app-title h1 {
+        line-height: 92px;
+    }
+
+    .joint-app.joint-theme-material .app-body {
+        height: -moz-calc(100% - 92px);
+        height: -webkit-calc(100% - 92px);
+        height: calc(100% - 92px);
+    }
+
+    .joint-toolbar.joint-theme-material .joint-widget[data-type="separator"],
+    .joint-toolbar.joint-theme-material button {
+        height: 45px;
+    }
+}
+
+/*  IE  */
+@media screen and (max-width: 1500px) and (min-width: 0\0) {
+    .joint-toolbar.joint-theme-material div[data-name="zoom-slider"] input,
+    .joint-toolbar.joint-theme-material label[data-name="zoom-slider-label"] {
+        display: none;
+    }
+
+    .joint-app.joint-theme-material .toolbar-container button[data-type="zoomIn"],
+    .joint-app.joint-theme-material .toolbar-container button[data-type="zoomOut"] {
+        display: block;
+    }
+}
+
+@media screen and (max-width: 1420px) and (min-width: 0\0) {
+    .joint-toolbar.joint-theme-material div[data-name="zoom-slider"] input,
+    .joint-toolbar.joint-theme-material label[data-name="zoom-slider-label"] {
+        display: inline-block;
+    }
+
+    .joint-app.joint-theme-material .toolbar-container button[data-type="zoomIn"],
+    .joint-app.joint-theme-material .toolbar-container button[data-type="zoomOut"] {
+        display: none;
+    }
+
+    .joint-app.joint-theme-material .toolbar-container {
+        overflow-y: auto;
+    }
+
+    .joint-toolbar.joint-theme-material {
+        flex-wrap: wrap; /*  IE 11 */
+    }
+
+    .joint-app.joint-theme-material .app-title h1 {
+        line-height: 92px;
+    }
+
+    .joint-app.joint-theme-material .app-body {
+        height: -moz-calc(100% - 92px);
+        height: -webkit-calc(100% - 92px);
+        height: calc(100% - 92px);
+    }
+
+    .joint-toolbar.joint-theme-material .joint-widget[data-type="separator"],
+    .joint-toolbar.joint-theme-material button {
+        height: 45px;
+    }
+
+    .joint-toolbar.joint-theme-material .joint-toolbar-group {
+        height: 40px;
+    }
+}
