@@ -1,6 +1,6 @@
 import { Component, OnInit, Renderer2, ViewChild, ElementRef } from '@angular/core';
 
-declare var $: JQueryStatic;
+// declare var $: JQueryStatic;
 import * as _ from 'lodash';
 import * as config from '../app/config/configuration';
 import * as joint from '../../rappid/build/rappid.min';
