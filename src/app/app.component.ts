@@ -1,4 +1,4 @@
-import { Component, OnInit, Renderer2, ViewChild } from '@angular/core';
+import { Component, OnInit, Renderer2, ViewChild, ElementRef } from '@angular/core';
 
 declare var $: JQueryStatic;
 import * as _ from 'lodash';
@@ -12,7 +12,11 @@ joint.setTheme('material');
   styleUrls: ['./app.component.css']
 })
 export class AppComponent implements OnInit {
-  @ViewChild('ToolBarContainer') toolBarcontainer;
+  @ViewChild('ToolBarContainer') ToolBarContainer: ElementRef;
+  @ViewChild('StencilContainer') StencilContainer: ElementRef;
+  @ViewChild('PaperContainer') PaperContainer: ElementRef;
+  @ViewChild('InspectorContainer') InspectorContainer: ElementRef;
+  @ViewChild('NavigatorContainer') NavigatorContainer: ElementRef;
   graph: joint.dia.Graph;
   commandManager: joint.dia.CommandManager;
   paper: joint.dia.Paper;
@@ -67,8 +71,8 @@ initializePaper() {
       autoResizePaper: true,
       cursor: 'grab'
   });
-  // this.renderer.appendChild(this.toolBarcontainer, paperScroller.el);
-  $('.paper-container').append(paperScroller.el);
+  this.PaperContainer.nativeElement.appendChild(paperScroller.el);
+  // $('.paper-container').append(paperScroller.el);
 
   paperScroller.render().center();
 }
@@ -93,8 +97,8 @@ initializeStencil() {
       // Remove tooltip definition from clone
       dragStartClone: (cell: joint.dia.Cell) => cell.clone().removeAttr('./data-tooltip')
   });
-
-  $('.stencil-container').append(stencil.el);
+  this.StencilContainer.nativeElement.appendChild(stencil.el);
+  // $('.stencil-container').append(stencil.el);
   stencil.render().load(config.stencil.shapes);
 }
 
@@ -250,8 +254,8 @@ initializeNavigator() {
       paperScroller: this.paperScroller,
       zoom: false
   });
-
-  $('.navigator-container').append(navigator.el);
+  this.NavigatorContainer.nativeElement.appendChild(navigator.el);
+  // $('.navigator-container').append(navigator.el);
   navigator.render();
 }
 
@@ -277,8 +281,8 @@ initializeToolbar() {
       'print:pointerclick': () => this.paper.print(),
       'grid-size:change': (size: number) => this.paper.setGridSize(size)
   });
-
-  $('.toolbar-container').append(toolbar.el);
+  this.ToolBarContainer.nativeElement.appendChild(toolbar.el);
+  // $('.toolbar-container').append(toolbar.el);
   toolbar.render();
 }
 
@@ -294,13 +298,13 @@ changeSnapLines(checked: boolean) {
 }
 
 initializeTooltips() {
-
-  // new joint.ui.Tooltip({
-  //     rootTarget: document.body,
-  //     target: '[data-tooltip]',
-  //     direction: joint.ui.Tooltip.TooltipArrowPosition.Auto,
-  //     padding: 10
-  // });
+  // tslint:disable-next-line:no-unused-expression
+  new joint.ui.Tooltip({
+      rootTarget: document.body,
+      target: '[data-tooltip]',
+      direction: joint.ui.Tooltip.TooltipArrowPosition.Auto,
+      padding: 10
+  });
 }
 
 openAsSVG() {
