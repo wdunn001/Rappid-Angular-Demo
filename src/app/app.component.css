@@ -61,7 +61,7 @@
 }
 
 
-.joint-app {
+:host {
   position: relative;
   width: 100%;
   height: 100%;
@@ -215,11 +215,11 @@ file, You can obtain one at http://jointjs.com/license/rappid_v2.txt
 
 
 /* Material */
-.joint-app.joint-theme-material .inspector-container {
+:host.joint-theme-material .inspector-container {
     background: #ecf0f8;
 }
 
-.joint-app.joint-theme-material .app-title {
+:host.joint-theme-material .app-title {
     box-shadow: inset -1px -1px 1px #434c63;
     background-color: #545D74;
     background-image: -ms-linear-gradient(top, #6B748F 0%, #545D74 100%);
@@ -278,14 +278,14 @@ file, You can obtain one at http://jointjs.com/license/rappid_v2.txt
         display: none;
     }
 
-    .joint-app.joint-theme-material .toolbar-container button[data-type="zoomIn"],
-    .joint-app.joint-theme-material .toolbar-container button[data-type="zoomOut"] {
+    :host.joint-theme-material .toolbar-container button[data-type="zoomIn"],
+    :host.joint-theme-material .toolbar-container button[data-type="zoomOut"] {
         display: block;
     }
 }
 
 @media screen and (max-width: 1300px) {
-    .joint-app.joint-theme-material .toolbar-container {
+    :host.joint-theme-material .toolbar-container {
         overflow-y: auto;
     }
 
@@ -293,11 +293,11 @@ file, You can obtain one at http://jointjs.com/license/rappid_v2.txt
         flex-wrap: wrap;
     }
 
-    .joint-app.joint-theme-material .app-title h1 {
+    :host.joint-theme-material .app-title h1 {
         line-height: 92px;
     }
 
-    .joint-app.joint-theme-material .app-body {
+    :host.joint-theme-material .app-body {
         height: -moz-calc(100% - 92px);
         height: -webkit-calc(100% - 92px);
         height: calc(100% - 92px);
@@ -316,8 +316,8 @@ file, You can obtain one at http://jointjs.com/license/rappid_v2.txt
         display: none;
     }
 
-    .joint-app.joint-theme-material .toolbar-container button[data-type="zoomIn"],
-    .joint-app.joint-theme-material .toolbar-container button[data-type="zoomOut"] {
+    :host.joint-theme-material .toolbar-container button[data-type="zoomIn"],
+    :host.joint-theme-material .toolbar-container button[data-type="zoomOut"] {
         display: block;
     }
 }
@@ -328,12 +328,12 @@ file, You can obtain one at http://jointjs.com/license/rappid_v2.txt
         display: inline-block;
     }
 
-    .joint-app.joint-theme-material .toolbar-container button[data-type="zoomIn"],
-    .joint-app.joint-theme-material .toolbar-container button[data-type="zoomOut"] {
+    :host.joint-theme-material .toolbar-container button[data-type="zoomIn"],
+    :host.joint-theme-material .toolbar-container button[data-type="zoomOut"] {
         display: none;
     }
 
-    .joint-app.joint-theme-material .toolbar-container {
+    :host.joint-theme-material .toolbar-container {
         overflow-y: auto;
     }
 
@@ -341,11 +341,11 @@ file, You can obtain one at http://jointjs.com/license/rappid_v2.txt
         flex-wrap: wrap; /*  IE 11 */
     }
 
-    .joint-app.joint-theme-material .app-title h1 {
+    :host.joint-theme-material .app-title h1 {
         line-height: 92px;
     }
 
-    .joint-app.joint-theme-material .app-body {
+    :host.joint-theme-material .app-body {
         height: -moz-calc(100% - 92px);
         height: -webkit-calc(100% - 92px);
         height: calc(100% - 92px);

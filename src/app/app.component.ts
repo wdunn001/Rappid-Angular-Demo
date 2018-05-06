@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Renderer2, ViewChild } from '@angular/core';
 
 declare var $: JQueryStatic;
 import * as _ from 'lodash';
@@ -12,7 +12,7 @@ joint.setTheme('material');
   styleUrls: ['./app.component.css']
 })
 export class AppComponent implements OnInit {
-
+  @ViewChild('ToolBarContainer') toolBarcontainer;
   graph: joint.dia.Graph;
   commandManager: joint.dia.CommandManager;
   paper: joint.dia.Paper;
@@ -25,7 +25,7 @@ export class AppComponent implements OnInit {
   toolbar: joint.ui.Toolbar;
   navigator: joint.ui.Navigator;
 
-  constructor() {
+  constructor(private renderer: Renderer2) {
   }
 
   ngOnInit() {
@@ -67,7 +67,7 @@ initializePaper() {
       autoResizePaper: true,
       cursor: 'grab'
   });
-
+  // this.renderer.appendChild(this.toolBarcontainer, paperScroller.el);
   $('.paper-container').append(paperScroller.el);
 
   paperScroller.render().center();
