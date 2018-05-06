@@ -1,5 +1,27 @@
 # Rappid-Angular-Demo
 
+A demo of getting rappid working with Angular using the kitchen sink app.
+
+This is a start and getting Rappid integrated with Angular
+Unfortunately it's still using all of the rappid dependencies
+- Backbone
+  - underscore
+- Jquery
+- Lodash
+and a bunch of others 
+I was able to relegate the jquery to at least not being visible in the component
+
+ToDo:
+
+- I need to split this up and convert each item into its own directive so that can be pulled in and manipulated seperately.
+
+- remove backbone references and angular input events instead
+
+- i dunno convince client.IO to do all of this for me instead? or better yet pay me to do it!
+
+
+
+
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 1.7.1.
 
 ## Development server
